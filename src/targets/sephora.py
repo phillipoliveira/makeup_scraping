@@ -1,8 +1,8 @@
 from pprint import pprint
 import math
-from src.commons.database import Database
-from src.models.product import Product
-from src.models.web_functions import WebFunctions
+from commons.database import Database
+from models.product import Product
+from models.web_functions import WebFunctions
 
 
 class Sephora(object):
@@ -115,7 +115,7 @@ class Sephora(object):
 
 
 sephora = Sephora()
-pprint(sephora.get_all_subcategory_links())
 subcategories = sephora.get_all_subcategory_links()
+pprint(subcategories)
 for subcategory in subcategories:
     sephora.get_products(subcategory)

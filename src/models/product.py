@@ -1,7 +1,5 @@
-from src.commons.database import Database
 import uuid
-import random
-import os
+
 
 
 class Product(object):
