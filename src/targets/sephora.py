@@ -39,6 +39,7 @@ class Sephora(object):
         clean_category_links = set()
         for i in raw_category_links:
             clean_category_links.add(i.get("href"))
+            print(i.get("href"))
         return clean_category_links
 
     def get_all_category_links(self):
@@ -59,6 +60,7 @@ class Sephora(object):
         clean_subcategory_links = set()
         for i in raw_subcategory_links :
             clean_subcategory_links.add(i.get("href"))
+            print(i.get("href"))
         return clean_subcategory_links
 
     def get_all_subcategory_links(self):
@@ -69,6 +71,8 @@ class Sephora(object):
             count += 1
             subcategory_links = self.get_subcategory_links(category)
             all_subcategory_links = all_subcategory_links | subcategory_links
+            print(subcategory_links)
+            print(count, len(category_links))
             print("Done {}/{}".format(count, len(category_links)))
         return all_subcategory_links
 
