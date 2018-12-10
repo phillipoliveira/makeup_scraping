@@ -7,7 +7,7 @@ from models.web_functions import WebFunctions
 
 class Sephora(object):
 
-    main_url = "https://www.sephora.com/ca/en"
+    main_url = "https://www.sephora.com"
     departments_url = "/sitemap/departments/"
 
     database = Database()
@@ -105,6 +105,8 @@ class Sephora(object):
         print(page_url)
         soup = WebFunctions.make_soup(url=main_url, session=self.session)
         pages = self.get_pages(soup)
+        if pages is None:
+            return
         for page in pages:
             url = main_url + "?pageSize=12" + "&currentPage={}".format(page)
             print(url)
@@ -112,10 +114,3 @@ class Sephora(object):
             products = soup.findAll("div", {"class": "css-12egk0t"})
             for product in products:
                 self.save_product(product)
-
-
-sephora = Sephora()
-subcategories = sephora.get_all_subcategory_links()
-pprint(subcategories)
-for subcategory in subcategories:
-    sephora.get_products(subcategory)

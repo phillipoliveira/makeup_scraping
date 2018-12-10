@@ -13,8 +13,6 @@ class WebFunctions(object):
             "User-Agent": Randomize().random_agent('desktop', 'mac')}
         session.headers = headers
         # session.proxies = {'http': 'http://198.15.118.141:22222'}
-        for cookie in session.cookies:
-            print(cookie)
         return session
 
     @staticmethod

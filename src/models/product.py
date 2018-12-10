@@ -1,7 +1,6 @@
 import uuid
 
 
-
 class Product(object):
     def __init__(self, site_name, link, image, site_product_id, brand, item_name, price, _id=None):
         self.site_name = site_name
@@ -27,4 +26,3 @@ class Product(object):
             "item_name": self.item_name,
             "price": self.price,
             "_id": self._id}
-
