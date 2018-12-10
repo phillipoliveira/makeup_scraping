@@ -13,7 +13,7 @@ class Product(object):
         self._id = uuid.uuid4().hex if _id is None else _id
 
     def add_product(self, database):
-        database.insert("{}".format(self.site_name), self.json())
+        database.insert("{0}".format(self.site_name), self.json())
         print("Product added")
 
     def json(self):
