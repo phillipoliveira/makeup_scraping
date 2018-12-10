@@ -73,7 +73,7 @@ class Sephora(object):
             all_subcategory_links = all_subcategory_links | subcategory_links
             # print(subcategory_links)
             # print(count, len(category_links))
-            # print("Done {}/{}".format(count, len(category_links)))
+            print("Done {}/{}".format(count, len(category_links)))
         return all_subcategory_links
 
     @classmethod
