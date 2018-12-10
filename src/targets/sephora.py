@@ -73,7 +73,7 @@ class Sephora(object):
             all_subcategory_links = all_subcategory_links | subcategory_links
             # print(subcategory_links)
             # print(count, len(category_links))
-            print("Done {}/{}".format(count, len(category_links)))
+            print("Done {0}/{1}".format(count, len(category_links)))
         return all_subcategory_links
 
     @classmethod
@@ -112,7 +112,7 @@ class Sephora(object):
         if pages is None:
             return
         for page in pages:
-            url = main_url + "?pageSize=12" + "&currentPage={}".format(page)
+            url = main_url + "?pageSize=12" + "&currentPage={0}".format(page)
             print(url)
             soup = WebFunctions.make_soup(url=url, session=self.session)
             products = soup.findAll("div", {"class": "css-12egk0t"})

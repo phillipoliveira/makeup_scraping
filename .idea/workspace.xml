@@ -20,11 +20,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sephora.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sephora.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/targets/sephora.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+            <state relative-caret-position="139">
+              <caret line="75" column="39" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="39" />
+              <caret line="114" column="71" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="71" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -41,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="318">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -114,6 +115,7 @@
       <find>number_of_product</find>
       <find>CA</find>
       <find>session</find>
+      <find>format</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,8 +133,8 @@
         <option value="$PROJECT_DIR$/src/targets/__init__.py" />
         <option value="$PROJECT_DIR$/src/models/product.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/src/targets/sephora.py" />
+        <option value="$PROJECT_DIR$/src/app.py" />
       </list>
     </option>
   </component>
@@ -398,22 +400,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.py">
+    <entry file="file://$PROJECT_DIR$/src/targets/sephora.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="139">
+          <caret line="75" column="39" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="39" />
+          <caret line="114" column="71" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="71" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/targets/sephora.py">
+    <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+        <state relative-caret-position="318">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

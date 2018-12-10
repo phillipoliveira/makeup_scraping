@@ -11,6 +11,7 @@ def scrape_sephora():
     for subcategory in subcategories:
         sephora.get_products(subcategory)
     t2 = time.time()
-    print("This took  {} seconds".format(t2-t1))
+    print("This took  {0} seconds".format(t2-t1))
+
 
 scrape_sephora()
