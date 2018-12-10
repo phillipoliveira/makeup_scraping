@@ -10,6 +10,8 @@ class WebFunctions(object):
         session = requests.session()
         headers = {
             "Connection": "close",
+            "Accept-Language": "en,fr;q=0.9,en-US;q=0.8,fr-CA;q=0.7",
+            "Cookie": "check=true; site_language=en; current_country=US;",
             "User-Agent": Randomize().random_agent('desktop', 'mac')}
         session.headers = headers
         # session.proxies = {'http': 'http://198.15.118.141:22222'}
