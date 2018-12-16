@@ -23,3 +23,9 @@ class WebFunctions(object):
         page_content = request.content
         soup = BeautifulSoup(page_content, "html.parser")
         return soup
+
+    @staticmethod
+    def only_digits(string):
+        string = string.split("-")[0]
+        num = float(''.join(i for i in string if any([i.isdigit(), i == "."])))
+        return num

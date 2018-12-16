@@ -8,7 +8,7 @@ from models.web_functions import WebFunctions
 class Sephora(object):
 
     main_url = "https://www.sephora.com"
-    departments_url = "/sitemap/departments/"
+    sitemap_url = "/sitemap/departments/"
 
     database = Database()
     database.initialize()
@@ -16,14 +16,8 @@ class Sephora(object):
     webfunctions = WebFunctions()
     session = WebFunctions.get_session()
 
-    @staticmethod
-    def only_digits(string):
-        string = string.split("-")[0]
-        num = float(''.join(i for i in string if any([i.isdigit(), i == "."])))
-        return num
-
     def get_department_links(self):
-        url = self.main_url + self.departments_url
+        url = self.main_url + self.sitemap_url
         soup = WebFunctions.make_soup(url=url, session=self.session)
         raw_links = soup.find("div", {"class": "Sitemap u-bt u-bw2"}).findAll("h2")
         clean_links = set()
@@ -80,7 +74,7 @@ class Sephora(object):
     def get_pages(cls, soup):
         try:
             num_str = soup.find("span", {"data-at": "number_of_products"}).text
-            num_of_products = cls.only_digits(num_str)
+            num_of_products = WebFunctions.only_digits(num_str)
             pages_num = int(math.ceil(num_of_products / 12))
             pages_num += 1
             pages = [int(i) for i in range(1, pages_num)]
@@ -94,7 +88,7 @@ class Sephora(object):
         site_product_id = product.find("button", {"data-comp": "ProductQuicklook"}).get("data-sku-number")
         brand = product.find("span", {"data-at": "sku_item_brand"}).text
         item_name = product.find("span", {"data-at": "sku_item_name"}).text
-        price = self.only_digits(product.find("span", {"data-at": "sku_item_price_list"}).text)
+        price = WebFunctions.only_digits(product.find("span", {"data-at": "sku_item_price_list"}).text)
         product = Product(site_name="sephora",
                           link=link,
                           image=image,

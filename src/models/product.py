@@ -14,7 +14,7 @@ class Product(object):
 
     def add_product(self, database):
         database.insert("{0}".format(self.site_name), self.json())
-        print("Product added")
+        print("product added - {0}".format(self.item_name))
 
     def json(self):
         return {
