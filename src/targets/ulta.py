@@ -56,16 +56,19 @@ class Ulta(object):
         url = "https:" + page_url
         soup = WebFunctions.make_soup(url=url, session=self.session)
         try:
-            num_str = int(soup.find("span", {"class": "search-res-number"}).text)
+            prod_num = int(soup.find("span", {"class": "search-res-number"}).text)
         except AttributeError:
             return
-        breakout = url.split("?")
-        if len(breakout) == 2:
-            new_url = breakout[0] + "?" + breakout[1] + "&Nrpp={0}".format(num_str)
+        if prod_num < 96:
+            new_url = url
         else:
-            new_url = breakout[0] + "?Nrpp={0}".format(num_str)
+            breakout = url.split("?")
+            if len(breakout) == 2:
+                new_url = breakout[0] + "?" + breakout[1] + "&Nrpp={0}".format(prod_num)
+            else:
+                new_url = breakout[0] + "?Nrpp={0}".format(prod_num)
+            soup = WebFunctions.make_soup(url=new_url, session=self.session)
         print(new_url)
-        soup = WebFunctions.make_soup(url=new_url, session=self.session)
         products = soup.find("ul", {"id": "foo16"}).findAll("li")
         for product in products:
             self.save_product(product)
