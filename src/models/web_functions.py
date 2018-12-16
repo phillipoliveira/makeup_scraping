@@ -19,7 +19,7 @@ class WebFunctions(object):
 
     @staticmethod
     def make_soup(url, session):
-        request = session.get(url)
+        request = session.get(url, verify=False)
         page_content = request.content
         soup = BeautifulSoup(page_content, "html.parser")
         return soup
