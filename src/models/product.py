@@ -16,6 +16,11 @@ class Product(object):
         database.insert("{0}".format(self.site_name), self.json())
         print("product added - {0}".format(self.link))
 
+    @classmethod
+    def get_products(cls, database, collection, query):
+        products = database.find(collection, query)
+        return [cls(**product) for product in products]
+
     def json(self):
         return {
             "site_name": self.site_name,

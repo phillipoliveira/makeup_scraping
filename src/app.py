@@ -1,5 +1,6 @@
 from targets.sephora import Sephora
 from targets.ulta import Ulta
+from models.match_products import MatchProducts
 from pprint import pprint
 import time
 
@@ -28,3 +29,6 @@ def scrape_ulta():
 
 scrape_ulta()
 scrape_sephora()
+
+match_products = MatchProducts()
+match_products.get_matches()

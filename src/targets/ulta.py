@@ -73,11 +73,3 @@ class Ulta(object):
         for product in products:
             self.save_product(product)
 
-
-ulta = Ulta()
-links = ulta.get_category_links()
-# pprint(links)
-for link in links:
-    ulta.get_products(link)
-
-
